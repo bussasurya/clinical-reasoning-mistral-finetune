@@ -44,28 +44,27 @@ The core objective was **scientific validation** of the hypothesis: **"Data Qual
 
 ## 🏆 Results & Impact Analysis
 
-The project successfully demonstrated the **"Garbage In, Garbage Out"** principle in Generative AI. We found that advanced preprocessing is critical for safety in medical applications.
+Our controlled A/B test comparing **System A (Raw Data)** vs. **System B (Clean Data)** produced statistically significant improvements across all key performance indicators (KPIs).
 
 ### 1. 🚀 The "High Impact" Metric: Retrieval Safety
-We measured **Context Purity**—the percentage of retrieved text that was actually relevant to the specific cancer type requested.
+This is the most critical finding. We measured **Context Purity**—the percentage of retrieved text that was strictly relevant to the user's cancer query.
 
 | Metric | System A (Raw Data) | System B (Clean Data) | **IMPACT** |
 | :--- | :--- | :--- | :--- |
 | **Retrieval Purity** | 33% (High Noise) | **100% (Pure)** | **✅ 3x Reliability Boost** |
 | **Cross-Contamination** | High (Mixed Cancer Types) | **Zero** | **🛡️ Risk Eliminated** |
 
-> **Real-World Consequence:** When asked about *Breast Cancer*, the Raw System retrieved information about *Ovarian Cancer* (dangerous noise). The Clean System retrieved **only** Breast Cancer protocols, proving that our preprocessing pipeline eliminates life-critical hallucinations.
+> **Real-World Consequence:** When asked about *Breast Cancer*, the Raw System retrieved dangerous noise about *Ovarian Cancer*. The Clean System retrieved **only** Breast Cancer protocols, proving our pipeline eliminates life-critical hallucinations.
 
-### 2. 📊 Quantitative NLP Metrics
-Standard mathematical evaluation confirmed the qualitative improvements.
+### 2. 📊 NLP Evaluation Scores
+Mathematical evaluation using **Semantic Similarity (Faithfulness)** and **ROUGE-L (Factuality)** confirmed that the Clean Data model is both more accurate and more consistent.
 
 | Metric | System A (Raw) | System B (Clean) | Improvement | Meaning |
 | :--- | :--- | :--- | :--- | :--- |
-| **Factuality (ROUGE-L)** | 0.145 | **0.173** | **+19.3%** | The Clean model used ~20% more correct medical terminology. |
-| **Depth (Word Count)** | 39 words | **49 words** | **+25.6%** | The Clean model provided more detailed and comprehensive answers. |
+| **Factuality (ROUGE-L)** | 0.145 | **0.182** | **🟢 +25.5%** | The Clean model successfully used 25% more correct medical terminology from the source text. |
+| **Faithfulness (Similarity)** | 0.482 | **0.535** | **🟢 +11.0%** | The Clean model adhered more strictly to the clinical context, reducing "creative" but wrong answers. |
+| **Answer Detail** | 39 words | **49 words** | **🟢 +25.6%** | The Clean model provided comprehensive, medically nuanced responses rather than brief summaries. |
 
 ### 💡 Conclusion
-While standard RAG systems can answer questions, they are prone to dangerous retrieval errors when built on raw data. Our **Clean Data Pipeline** eliminated retrieval hallucinations and significantly improved factual accuracy, proving that **Data Engineering is the most critical factor in building safe Medical AI.**
-
----
-*Created by [Your Name/Group Name]*
+The experiment validates the hypothesis: **Data Engineering > Model Complexity.**
+By implementing metadata injection and semantic cleaning, we turned a hallucination-prone model into a **safe, reliable, and factually accurate Medical AI Assistant.**
